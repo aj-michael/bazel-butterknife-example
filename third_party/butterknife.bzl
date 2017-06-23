@@ -39,7 +39,10 @@ def butterknife_repositories():
 
 def butterknife_targets():
   native.android_library(
-      name = "butterknife_runtime",
+      name = "butterknife",
+      exported_plugins = [
+          "butterknife_compiler",
+      ],
       exports = [
           "@butterknife//aar",
           "@butterknife_annotations//jar",
@@ -60,12 +63,4 @@ def butterknife_targets():
           "@guava//jar",
       ],
       visibility = ["//visibility:private"],
-  )
-
-  native.java_library(
-      name = "butterknife_processor",
-      exported_plugins = [
-          ":butterknife_compiler",
-      ],
-      visibility = ["//visibility:public"],
   )

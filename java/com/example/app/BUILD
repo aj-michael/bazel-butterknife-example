@@ -6,7 +6,6 @@ android_binary(
         "MyActivity.java",
     ],
     deps = [
-        "//third_party:butterknife_runtime",
-        "//third_party:butterknife_processor",
+        "//third_party:butterknife",
     ],
 )
